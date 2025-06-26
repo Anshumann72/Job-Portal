@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.*;
 import com.examly.springapp.model.Job;
 import com.examly.springapp.service.JobService;
+
+
+
 @RestController
 public class JobController {
 
