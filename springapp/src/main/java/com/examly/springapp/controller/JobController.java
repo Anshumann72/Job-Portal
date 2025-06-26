@@ -34,7 +34,7 @@ public class JobController {
 
     @PutMapping("api/jobs/{jobsId}")
     public ResponseEntity<?> updateJobs(@PathVariable int jobId,@RequestBody Job job){
-        Job j1=jobService.updateJobs(job);
+        Job j1=jobService.updateJobs(jobId,job);
         return new ResponseEntity<>(j1,HttpStatus.valueOf(200));
     }
 
