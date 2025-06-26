@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: com.examly.springapp.SpringappApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 19, Failures: 10, Errors: 0, Skipped: 0, Time elapsed: 3.491 s <<< FAILURE! - in com.examly.springapp.SpringappApplicationTests
+Tests run: 19, Failures: 10, Errors: 0, Skipped: 0, Time elapsed: 3.195 s <<< FAILURE! - in com.examly.springapp.SpringappApplicationTests
 com.examly.springapp.SpringappApplicationTests.backend_day18_testGetAllJobs  Time elapsed: 0.008 s  <<< FAILURE!
 java.lang.AssertionError: Status expected:<200> but was:<405>
 	at com.examly.springapp.SpringappApplicationTests.backend_day18_testGetAllJobs(SpringappApplicationTests.java:132)
@@ -14,7 +14,7 @@ com.examly.springapp.SpringappApplicationTests.backend_day19_testApplicationRepo
 org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
 	at com.examly.springapp.SpringappApplicationTests.backend_day19_testApplicationRepoFileExists(SpringappApplicationTests.java:152)
 
-com.examly.springapp.SpringappApplicationTests.backend_day20_testApplicationHasManyToOneAnnotations  Time elapsed: 0.002 s  <<< FAILURE!
+com.examly.springapp.SpringappApplicationTests.backend_day20_testApplicationHasManyToOneAnnotations  Time elapsed: 0.003 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Class not found: com.examly.springapp.model.Application
 	at com.examly.springapp.SpringappApplicationTests.backend_day20_testApplicationHasManyToOneAnnotations(SpringappApplicationTests.java:180)
 
@@ -30,7 +30,7 @@ com.examly.springapp.SpringappApplicationTests.backend_day23_testApplicationCont
 org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
 	at com.examly.springapp.SpringappApplicationTests.backend_day23_testApplicationControllerFileExists(SpringappApplicationTests.java:214)
 
-com.examly.springapp.SpringappApplicationTests.backend_day23_testGetAllApplication  Time elapsed: 0.01 s  <<< FAILURE!
+com.examly.springapp.SpringappApplicationTests.backend_day23_testGetAllApplication  Time elapsed: 0.021 s  <<< FAILURE!
 java.lang.AssertionError: Status expected:<200> but was:<404>
 	at com.examly.springapp.SpringappApplicationTests.backend_day23_testGetAllApplication(SpringappApplicationTests.java:222)
 
@@ -38,7 +38,7 @@ com.examly.springapp.SpringappApplicationTests.backend_day24_testEntityUserFileE
 org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
 	at com.examly.springapp.SpringappApplicationTests.backend_day24_testEntityUserFileExists(SpringappApplicationTests.java:232)
 
-com.examly.springapp.SpringappApplicationTests.backend_day25_testCorsConfigFileExists  Time elapsed: 0.002 s  <<< FAILURE!
+com.examly.springapp.SpringappApplicationTests.backend_day25_testCorsConfigFileExists  Time elapsed: 0.005 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
 	at com.examly.springapp.SpringappApplicationTests.backend_day25_testCorsConfigFileExists(SpringappApplicationTests.java:241)
 
