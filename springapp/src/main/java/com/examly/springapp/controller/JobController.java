@@ -3,6 +3,7 @@ package com.examly.springapp.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,6 +41,29 @@ public class JobController {
         Job j1=jobService.updateJobs(jobId,job);
         return new ResponseEntity<>(j1,HttpStatus.valueOf(200));
     }
+
+
+    @GetMapping("api/jobs")
+    public ResponseEntity<?> getAllJobs(){
+        List<Job> j1=jobService.getAllJobs();
+        return new ResponseEntity<>(j1,HttpStatus.valueOf(200));
+    }
+
+    @GetMapping("api/jobs/{jobId}")
+    public ResponseEntity<?> getJobsById(@PathVariable int jobId){
+        Job j1=jobService.getJobsById(jobId);
+        return new ResponseEntity<>(j1,HttpStatus.valueOf(200));
+    }
+
+
+    @DeleteMapping("api/jobs/{jobId}")
+    public ResponseEntity<?> deleteJobs(@PathVariable int jobId){
+        boolean j1=jobService.deleteJobs(jobId);
+        return new ResponseEntity<>(j1,HttpStatus.valueOf(200));
+    }
+
+
+
 
 
 

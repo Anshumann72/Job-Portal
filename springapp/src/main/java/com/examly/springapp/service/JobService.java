@@ -32,4 +32,17 @@ public class JobService {
       return null;
     }
 
+    public List<Job> getAllJobs() {
+       return jobRepo.findAll();
+    }
+
+    public Job getJobsById(int jobId) {
+       return jobRepo.findById(jobId).orElse(null);
+    }
+
+    public boolean deleteJobs(int jobId) {
+      jobRepo.deleteById(jobId);
+      return true;
+    }
+
 }
