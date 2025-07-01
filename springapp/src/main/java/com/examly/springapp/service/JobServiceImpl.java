@@ -46,4 +46,28 @@ public class JobServiceImpl implements JobService {
       return true;
     }
 
+    @Override
+    public Job createJob(Job job) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'createJob'");
+    }
+
+    @Override
+    public Job updateJob(int id, Job job) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'updateJob'");
+    }
+
+    @Override
+    public Optional<Job> getJobByID(int id) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getJobByID'");
+    }
+
+    @Override
+    public void deleteJob(int id) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'deleteJob'");
+    }
+
 }

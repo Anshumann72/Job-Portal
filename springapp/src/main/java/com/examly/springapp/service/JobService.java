@@ -25,6 +25,7 @@ public interface JobService {
   Job updateJob(int id,Job job);
   Optional<Job> getJobByID(int id);
   //List<Job> getAllJobs();
+  void deleteJob(int id);
 
 
    
