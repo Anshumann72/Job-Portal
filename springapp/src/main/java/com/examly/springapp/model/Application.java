@@ -24,10 +24,10 @@ public class Application {
     private String skills;
     private Date applicationDate;
     private String locationPreference;
-    @ManyToOne(ma)
+    @ManyToOne
     @JoinColumn(name = "job_id",nullable=false)
     @JsonBackReference
-     Job job;
+    private Job job;
 
     
     public Application() {
