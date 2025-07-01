@@ -25,6 +25,55 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/ `appdb` /*!40100 DEFAULT CHARACTER SET 
 USE `appdb`;
 
 --
+-- Table structure for table `application`
+--
+
+DROP TABLE IF EXISTS `application`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `application` (
+  `id` int(11) NOT NULL,
+  `application_date` date DEFAULT NULL,
+  `location_preference` varchar(255) DEFAULT NULL,
+  `skills` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `years_of_experience` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `application`
+--
+
+LOCK TABLES `application` WRITE;
+/*!40000 ALTER TABLE `application` DISABLE KEYS */;
+/*!40000 ALTER TABLE `application` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `application_seq`
+--
+
+DROP TABLE IF EXISTS `application_seq`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `application_seq` (
+  `next_val` bigint(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `application_seq`
+--
+
+LOCK TABLES `application_seq` WRITE;
+/*!40000 ALTER TABLE `application_seq` DISABLE KEYS */;
+INSERT INTO `application_seq` VALUES (1);
+/*!40000 ALTER TABLE `application_seq` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `job`
 --
 
@@ -38,7 +87,7 @@ CREATE TABLE `job` (
   `location` varchar(255) DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`job_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -47,7 +96,7 @@ CREATE TABLE `job` (
 
 LOCK TABLES `job` WRITE;
 /*!40000 ALTER TABLE `job` DISABLE KEYS */;
-INSERT INTO `job` VALUES (1,'Tech Corp','Develop and maintain software','New York','Software Developer'),(2,'Tech Corp','Develop and maintain software','New York','Software Developer'),(3,'Tech Corp','Develop and maintain software','New York','Software Developer'),(4,'Tech Corp','Develop and maintain software','New York','Software Developer'),(5,'Tech Corp','Develop and maintain software','New York','Software Developer'),(6,'Tech Corp','Develop and maintain software','New York','Software Developer'),(7,'Tech Corp','Develop and maintain software','New York','Software Developer'),(8,'Tech Corp','Develop and maintain software','New York','Software Developer');
+INSERT INTO `job` VALUES (1,'Tech Corp','Develop and maintain software','New York','Software Developer'),(2,'Tech Corp','Develop and maintain software','New York','Software Developer'),(3,'Tech Corp','Develop and maintain software','New York','Software Developer'),(4,'Tech Corp','Develop and maintain software','New York','Software Developer'),(5,'Tech Corp','Develop and maintain software','New York','Software Developer'),(6,'Tech Corp','Develop and maintain software','New York','Software Developer'),(7,'Tech Corp','Develop and maintain software','New York','Software Developer'),(8,'Tech Corp','Develop and maintain software','New York','Software Developer'),(9,'Tech Corp','Develop and maintain software','New York','Software Developer');
 /*!40000 ALTER TABLE `job` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -60,4 +109,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-07-01 15:25:13
+-- Dump completed on 2025-07-01 15:34:07
