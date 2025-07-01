@@ -25,7 +25,6 @@ public class Job {
 
  @OneToMany(mappedBy = "job",cascade = CascadeType.ALL,orphanRemoval =true)
  @JsonManagedReference
-
  private List<Application> applications=new ArrayList<>();
 
 

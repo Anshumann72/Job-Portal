@@ -29,7 +29,7 @@ public class Application {
     @JoinColumn(name = "job_id")
     @JsonBackReference
     private Job job;
-
+    
 
     public Application() {
     }
