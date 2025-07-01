@@ -27,7 +27,7 @@ public class Application {
     @ManyToOne
     @JoinColumn(name = "job_id",nullable=false)
     @JsonBackReference
-    private Job job;
+     Job job;
 
     
     public Application() {
