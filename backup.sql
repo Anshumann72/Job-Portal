@@ -38,7 +38,7 @@ CREATE TABLE `job` (
   `location` varchar(255) DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`job_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -47,7 +47,7 @@ CREATE TABLE `job` (
 
 LOCK TABLES `job` WRITE;
 /*!40000 ALTER TABLE `job` DISABLE KEYS */;
-INSERT INTO `job` VALUES (1,'Tech Corp','Develop and maintain software','New York','Software Developer'),(2,'Tech Corp','Develop and maintain software','New York','Software Developer'),(3,'Tech Corp','Develop and maintain software','New York','Software Developer'),(4,'Tech Corp','Develop and maintain software','New York','Software Developer'),(5,'Tech Corp','Develop and maintain software','New York','Software Developer');
+INSERT INTO `job` VALUES (1,'Tech Corp','Develop and maintain software','New York','Software Developer'),(2,'Tech Corp','Develop and maintain software','New York','Software Developer'),(3,'Tech Corp','Develop and maintain software','New York','Software Developer'),(4,'Tech Corp','Develop and maintain software','New York','Software Developer'),(5,'Tech Corp','Develop and maintain software','New York','Software Developer'),(6,'Tech Corp','Develop and maintain software','New York','Software Developer');
 /*!40000 ALTER TABLE `job` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -60,4 +60,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-07-01 10:41:44
+-- Dump completed on 2025-07-01 10:44:33
