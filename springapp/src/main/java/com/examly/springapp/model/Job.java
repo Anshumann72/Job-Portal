@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import java.util.*;
 
 @Entity
 public class Job {
@@ -15,6 +16,12 @@ public class Job {
  private String description;
  private String company;
  private String location;
+
+
+ 
+ private List<Application> applications=new ArrayList<>();
+
+
   
  public Job() {
 }
