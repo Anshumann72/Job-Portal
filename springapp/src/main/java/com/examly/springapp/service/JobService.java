@@ -8,44 +8,25 @@ import com.examly.springapp.repository.JobRepo;
 import java.util.*;
 
 @Service
-public class JobService {
+public interface JobService {
 
-    @Autowired
-    JobRepo jobRepo;
+  Job getJobsById(int jobId);
+
+  boolean deleteJobs(int jobId);
+
+  List<Job> getAllJobs();
+
+  Job updateJobs(int jobId, Job job);
+
+  Job addJobs(Job job);
+
+  Job createJob(Job job);
+
+  Job updateJob(int id,Job job);
+  Optional<Job> getJobByID(int id);
+  //List<Job> getAllJobs();
 
 
-    //public abstract Job createJob(Job job);
-
-    public Job addJobs(Job job) {
-      jobRepo.save(job);
-      return job;
-    }
-
-    public Job updateJobs(int jobId,Job job) {
-      Optional<Job> o=jobRepo.findById(jobId);
-      if(o.isPresent()){
-        Job j2=o.get();
-        j2.setCompany(job.getCompany());
-        j2.setDescription(job.getDescription());
-        j2.setLocation(job.getDescription());
-        j2.setTitle(job.getTitle());
-        jobRepo.save(j2);
-        return j2;
-      }
-      return null;
-    }
-
-    public List<Job> getAllJobs() {
-       return jobRepo.findAll();
-    }
-
-    public Job getJobsById(int jobId) {
-       return jobRepo.findById(jobId).orElse(null);
-    }
-
-    public boolean deleteJobs(int jobId) {
-      jobRepo.deleteById(jobId);
-      return true;
-    }
+   
 
 }
