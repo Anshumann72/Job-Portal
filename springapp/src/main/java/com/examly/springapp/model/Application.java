@@ -24,7 +24,7 @@ public class Application {
     private String skills;
     private Date applicationDate;
     private String locationPreference;
-    @ManyToOne
+    @ManyToOne(ma)
     @JoinColumn(name = "job_id",nullable=false)
     @JsonBackReference
      Job job;
