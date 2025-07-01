@@ -13,6 +13,9 @@ public class JobService {
     @Autowired
     JobRepo jobRepo;
 
+
+    //public abstract Job createJob(Job job);
+
     public Job addJobs(Job job) {
       jobRepo.save(job);
       return job;

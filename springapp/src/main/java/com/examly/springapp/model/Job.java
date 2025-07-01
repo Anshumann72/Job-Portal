@@ -1,10 +1,15 @@
 package com.examly.springapp.model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+
 import java.util.*;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 public class Job {
@@ -18,7 +23,9 @@ public class Job {
  private String location;
 
 
- 
+ @OneToMany(mappedBy = "job",cascade = CascadeType.ALL,orphanRemoval =true)
+ @JsonManagedReference
+
  private List<Application> applications=new ArrayList<>();
 
 
