@@ -24,22 +24,24 @@ public class Application {
     private String skills;
     private Date applicationDate;
     private String locationPreference;
+
     @ManyToOne
-    @JoinColumn(name = "job_id",nullable=false)
+    @JoinColumn(name = "job_id")
     @JsonBackReference
     private Job job;
 
-    
+
     public Application() {
     }
     public Application(int id, String status, int yearsOfExperience, String skills, Date applicationDate,
-            String locationPreference) {
+            String locationPreference, Job job) {
         this.id = id;
         this.status = status;
         this.yearsOfExperience = yearsOfExperience;
         this.skills = skills;
         this.applicationDate = applicationDate;
         this.locationPreference = locationPreference;
+        this.job = job;
     }
     public int getId() {
         return id;
@@ -77,9 +79,14 @@ public class Application {
     public void setLocationPreference(String locationPreference) {
         this.locationPreference = locationPreference;
     }
-
+    public Job getJob() {
+        return job;
+    }
+    public void setJob(Job job) {
+        this.job = job;
+    }
     
 
-
+    
 
 }
