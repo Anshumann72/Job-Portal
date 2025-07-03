@@ -39,4 +39,10 @@ public class ApplicationServiceImpl implements ApplicationService {
         throw new UnsupportedOperationException("Unimplemented method 'deleteApplication'");
     }
 
+    @Override
+    public List<Application> getApplicationByUserId(int UserId) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getApplicationByUserId'");
+    }
+
 }

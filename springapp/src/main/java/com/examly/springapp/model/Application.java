@@ -31,10 +31,20 @@ public class Application {
     private Job job;
     
 
+    @ManyToOne
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+    public void setUser(User user) {
+        this.user = user;
+    }
     public Application() {
     }
+   
     public Application(int id, String status, int yearsOfExperience, String skills, Date applicationDate,
-            String locationPreference, Job job) {
+            String locationPreference, Job job, User user) {
         this.id = id;
         this.status = status;
         this.yearsOfExperience = yearsOfExperience;
@@ -42,7 +52,10 @@ public class Application {
         this.applicationDate = applicationDate;
         this.locationPreference = locationPreference;
         this.job = job;
+        this.user = user;
     }
+
+    
     public int getId() {
         return id;
     }

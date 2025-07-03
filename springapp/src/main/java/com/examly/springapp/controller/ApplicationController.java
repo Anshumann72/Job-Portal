@@ -3,6 +3,7 @@ package com.examly.springapp.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +21,7 @@ public class ApplicationController {
     @GetMapping("/api/application/user/{userId}")
     public ResponseEntity<?> getAppListById(@PathVariable int userId){
       List<Application> li=applicationService.getApplicationByUserId(userId);
-      if(!li.isEmpty())
+      if(!li.isEmpty()) return new ResponseEntity<>(li,HttpStatus.OK);
+      return new ResponseEntity<>(HttpStatus.valueOf(400));
     }
 }
