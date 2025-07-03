@@ -1,5 +1,6 @@
 package com.examly.springapp.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,10 +26,13 @@ public class ApplicationController {
       return new ResponseEntity<>(HttpStatus.valueOf(400));
     }
 
-    @GetMapping("/api/application/")
+    @GetMapping("/api/applications")
     public ResponseEntity<?> getAllAppList(){
-      List<Application> li=applicationService.getApplicationByUserId();
-      if(!li.isEmpty()) return new ResponseEntity<>(li,HttpStatus.OK);
-      return new ResponseEntity<>(HttpStatus.valueOf(400));
+      List<Application> li=applicationService.getAllApplications();
+      //ArrayList<Application> li2=new ArrayList<>();
+      //li2.add(new Application(1,"yo",20,"java",07-08-2002,"yoo"));
+      //if(!li.isEmpty())
+       return new ResponseEntity<>(li,HttpStatus.OK);
+      //return new ResponseEntity<>(HttpStatus.valueOf(400));
     }
 }

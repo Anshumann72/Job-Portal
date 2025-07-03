@@ -16,8 +16,7 @@ public class ApplicationServiceImpl implements ApplicationService {
 
     @Override
     public List<Application> getAllApplications() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAllApplications'");
+        return applicationRepo.findAll();
     }
 
     @Override
@@ -28,8 +27,7 @@ public class ApplicationServiceImpl implements ApplicationService {
 
     @Override
     public Application saveApplication(Application application) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'saveApplication'");
+      return applicationRepo.save(application);
     }
 
     @Override
@@ -50,9 +48,6 @@ public class ApplicationServiceImpl implements ApplicationService {
         throw new UnsupportedOperationException("Unimplemented method 'getApplicationByUserId'");
     }
 
-    @Override
-    public List<Application> getApplicationByUserId() {
-       
-    }
+   
 
 }
