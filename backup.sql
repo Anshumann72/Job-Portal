@@ -39,8 +39,11 @@ CREATE TABLE `application` (
   `status` varchar(255) DEFAULT NULL,
   `years_of_experience` int(11) NOT NULL,
   `job_id` int(11) NOT NULL,
+  `user_user_id` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FKls6sryk64ga8o5t4bym8qu3vm` (`job_id`),
+  KEY `FK8kcfa12qn4soj6ygtveduvvb2` (`user_user_id`),
+  CONSTRAINT `FK8kcfa12qn4soj6ygtveduvvb2` FOREIGN KEY (`user_user_id`) REFERENCES `user` (`user_id`),
   CONSTRAINT `FKls6sryk64ga8o5t4bym8qu3vm` FOREIGN KEY (`job_id`) REFERENCES `job` (`job_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -102,6 +105,53 @@ LOCK TABLES `job` WRITE;
 INSERT INTO `job` VALUES (1,'Tech Corp','Develop and maintain software','New York','Software Developer'),(2,'Tech Corp','Develop and maintain software','New York','Software Developer'),(3,'Tech Corp','Develop and maintain software','New York','Software Developer'),(4,'Tech Corp','Develop and maintain software','New York','Software Developer'),(5,'Tech Corp','Develop and maintain software','New York','Software Developer'),(6,'Tech Corp','Develop and maintain software','New York','Software Developer'),(7,'Tech Corp','Develop and maintain software','New York','Software Developer'),(8,'Tech Corp','Develop and maintain software','New York','Software Developer'),(9,'Tech Corp','Develop and maintain software','New York','Software Developer'),(10,'Tech Corp','Develop and maintain software','New York','Software Developer'),(11,'Tech Corp','Develop and maintain software','New York','Software Developer'),(12,'Tech Corp','Develop and maintain software','New York','Software Developer'),(13,'Tech Corp','Develop and maintain software','New York','Software Developer'),(14,'Tech Corp','Develop and maintain software','New York','Software Developer'),(15,'Tech Corp','Develop and maintain software','New York','Software Developer'),(16,'Tech Corp','Develop and maintain software','New York','Software Developer'),(17,'Tech Corp','Develop and maintain software','New York','Software Developer'),(18,'Tech Corp','Develop and maintain software','New York','Software Developer'),(19,'Tech Corp','Develop and maintain software','New York','Software Developer'),(20,'Tech Corp','Develop and maintain software','New York','Software Developer'),(21,'Tech Corp','Develop and maintain software','New York','Software Developer'),(22,'Tech Corp','Develop and maintain software','New York','Software Developer'),(23,'Tech Corp','Develop and maintain software','New York','Software Developer'),(24,'Tech Corp','Develop and maintain software','New York','Software Developer'),(25,'Tech Corp','Develop and maintain software','New York','Software Developer'),(26,'Tech Corp','Develop and maintain software','New York','Software Developer'),(27,'Tech Corp','Develop and maintain software','New York','Software Developer'),(28,'Tech Corp','Develop and maintain software','New York','Software Developer');
 /*!40000 ALTER TABLE `job` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `user` (
+  `user_id` bigint(20) NOT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `role` varchar(255) DEFAULT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user`
+--
+
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user_seq`
+--
+
+DROP TABLE IF EXISTS `user_seq`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `user_seq` (
+  `next_val` bigint(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_seq`
+--
+
+LOCK TABLES `user_seq` WRITE;
+/*!40000 ALTER TABLE `user_seq` DISABLE KEYS */;
+INSERT INTO `user_seq` VALUES (1);
+/*!40000 ALTER TABLE `user_seq` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -112,4 +162,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-07-03 17:44:40
+-- Dump completed on 2025-07-03 17:53:23
