@@ -24,4 +24,11 @@ public class ApplicationController {
       if(!li.isEmpty()) return new ResponseEntity<>(li,HttpStatus.OK);
       return new ResponseEntity<>(HttpStatus.valueOf(400));
     }
+
+    @GetMapping("/api/application/")
+    public ResponseEntity<?> getAllAppList(){
+      List<Application> li=applicationService.getApplicationByUserId();
+      if(!li.isEmpty()) return new ResponseEntity<>(li,HttpStatus.OK);
+      return new ResponseEntity<>(HttpStatus.valueOf(400));
+    }
 }

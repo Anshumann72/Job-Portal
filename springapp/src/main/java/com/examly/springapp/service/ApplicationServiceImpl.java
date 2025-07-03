@@ -2,12 +2,17 @@ package com.examly.springapp.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.examly.springapp.model.Application;
+import com.examly.springapp.repository.ApplicationRepo;
 
 @Service
 public class ApplicationServiceImpl implements ApplicationService {
+
+    @Autowired
+    ApplicationRepo applicationRepo;
 
     @Override
     public List<Application> getAllApplications() {
@@ -43,6 +48,11 @@ public class ApplicationServiceImpl implements ApplicationService {
     public List<Application> getApplicationByUserId(int UserId) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getApplicationByUserId'");
+    }
+
+    @Override
+    public List<Application> getApplicationByUserId() {
+       return applicationRepo.findAll();
     }
 
 }

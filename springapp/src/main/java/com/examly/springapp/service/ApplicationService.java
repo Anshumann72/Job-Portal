@@ -12,5 +12,6 @@ public interface ApplicationService {
     Application updateApplication(int id,Application application);
     void deleteApplication(int id);
     List<Application> getApplicationByUserId(int userId);
+    List<Application> getApplicationByUserId();
 
 }
