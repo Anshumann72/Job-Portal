@@ -1,16 +1,16 @@
 -------------------------------------------------------------------------------
 Test set: com.examly.springapp.SpringappApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 19, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 4.979 s <<< FAILURE! - in com.examly.springapp.SpringappApplicationTests
+Tests run: 19, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 4.957 s <<< FAILURE! - in com.examly.springapp.SpringappApplicationTests
 com.examly.springapp.SpringappApplicationTests.backend_day20_testApplicationHasManyToOneAnnotations  Time elapsed: 0.008 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: Missing @ManyToOne annotation for 'job' or 'user' in Application class.
 	at com.examly.springapp.SpringappApplicationTests.backend_day20_testApplicationHasManyToOneAnnotations(SpringappApplicationTests.java:176)
 
-com.examly.springapp.SpringappApplicationTests.backend_day23_testGetAllApplication  Time elapsed: 0.012 s  <<< FAILURE!
+com.examly.springapp.SpringappApplicationTests.backend_day23_testGetAllApplication  Time elapsed: 0.009 s  <<< FAILURE!
 java.lang.AssertionError: Status expected:<200> but was:<404>
 	at com.examly.springapp.SpringappApplicationTests.backend_day23_testGetAllApplication(SpringappApplicationTests.java:222)
 
-com.examly.springapp.SpringappApplicationTests.backend_day25_testCorsConfigFileExists  Time elapsed: 0.005 s  <<< FAILURE!
+com.examly.springapp.SpringappApplicationTests.backend_day25_testCorsConfigFileExists  Time elapsed: 0.004 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
 	at com.examly.springapp.SpringappApplicationTests.backend_day25_testCorsConfigFileExists(SpringappApplicationTests.java:241)
 
