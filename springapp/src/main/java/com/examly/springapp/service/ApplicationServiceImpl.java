@@ -52,7 +52,7 @@ public class ApplicationServiceImpl implements ApplicationService {
 
     @Override
     public List<Application> getApplicationByUserId() {
-       return applicationRepo.findAll();
+       
     }
 
 }
