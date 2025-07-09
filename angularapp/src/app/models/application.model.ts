@@ -3,5 +3,6 @@ export interface Application{
     status?:string,
     yearOfExperience:number,
     skills:string,
-    
+    applicationDate:Date;
+    locationPreference:string;
 }
