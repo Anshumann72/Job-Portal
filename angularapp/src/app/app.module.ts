@@ -7,6 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ErrorComponent } from './components/error/error.component';
 import { JobListComponent } from './components/job-list/job-list.component';
 import { AddJobComponent } from './components/add-job/add-job.component';
+import { ViewApplicationComponent } from './components/view-application/view-application.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AddJobComponent } from './components/add-job/add-job.component';
     HomeComponent,
     ErrorComponent,
     JobListComponent,
-    AddJobComponent
+    AddJobComponent,
+    ViewApplicationComponent
   ],
   imports: [
     BrowserModule,
