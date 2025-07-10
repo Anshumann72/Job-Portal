@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Job } from 'src/app/models/job.model';
 
 @Component({
   selector: 'app-job-list',
@@ -11,5 +12,7 @@ export class JobListComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  jobs:Job[]=[]
 
 }
