@@ -8,8 +8,8 @@ import { ErrorComponent } from './components/error/error.component';
 import { JobListComponent } from './components/job-list/job-list.component';
 import { AddJobComponent } from './components/add-job/add-job.component';
 import { ViewApplicationComponent } from './components/view-application/view-application.component';
-import { ApplicationDetailsComponent } from './application-details/application-details.component';
-import { MyApplicationComponent } from './my-application/my-application.component';
+import { MyApplicationComponent } from './components/my-application/my-application.component';
+import { ApplicationDetailsComponent } from './components/application-details/application-details.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +19,9 @@ import { MyApplicationComponent } from './my-application/my-application.componen
     JobListComponent,
     AddJobComponent,
     ViewApplicationComponent,
+    MyApplicationComponent,
     ApplicationDetailsComponent,
-    MyApplicationComponent
+    
   ],
   imports: [
     BrowserModule,
