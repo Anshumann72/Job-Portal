@@ -11,7 +11,21 @@ export class ViewApplicationComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.fetchJobs();
   }
 
   jobs:Job[]=[]
+
+  errorMessage:string
+
+  fetchJobs(){
+    
+  }
+
+  viewJobDetails(jobId:number){
+    
+  }
+
+
+
 }
