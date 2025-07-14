@@ -15,4 +15,12 @@ export class JobListComponent implements OnInit {
 
   jobs:Job[]=[]
 
+  updateJob(id:number){
+
+  }
+
+  deleteJob(id:number){
+    
+  }
+
 }

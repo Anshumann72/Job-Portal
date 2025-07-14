@@ -23,8 +23,9 @@ export class ViewApplicationComponent implements OnInit {
   }
 
   viewJobDetails(jobId:number){
-    
+
   }
+  
 
 
 
