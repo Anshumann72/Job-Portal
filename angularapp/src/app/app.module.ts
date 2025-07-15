@@ -10,6 +10,7 @@ import { AddJobComponent } from './components/add-job/add-job.component';
 import { ViewApplicationComponent } from './components/view-application/view-application.component';
 import { MyApplicationComponent } from './components/my-application/my-application.component';
 import { ApplicationDetailsComponent } from './components/application-details/application-details.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ApplicationDetailsComponent } from './components/application-details/ap
     ViewApplicationComponent,
     MyApplicationComponent,
     ApplicationDetailsComponent,
+    LoginComponent,
     
   ],
   imports: [
