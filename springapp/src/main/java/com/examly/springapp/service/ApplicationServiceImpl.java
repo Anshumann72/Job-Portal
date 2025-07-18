@@ -33,13 +33,18 @@ public class ApplicationServiceImpl implements ApplicationService {
     public Application updateApplication(int id, Application application) {
      Application a=applicationRepo.findById(id).orElse(null);
       a.setApplicationDate(application.getApplicationDate());
-      a.setLocationPreference(null);
+      a.setLocationPreference(application.getLocationPreference());
+      a.setSkills(application.getSkills());
+      a.setStatus(application.getStatus());
+      a.setYearsOfExperience(application.getYearsOfExperience());
+      return applicationRepo.save(a);
     }
 
     @Override
     public void deleteApplication(int id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteApplication'");
+     if(applicationRepo.existsById(id)){
+        applicationRepo.deleteById(id);
+     }
     }
 
     @Override
