@@ -29,10 +29,6 @@ public class ApplicationController {
     @GetMapping("/api/applications")
     public ResponseEntity<?> getAllAppList(){
       List<Application> li=applicationService.getAllApplications();
-      //ArrayList<Application> li2=new ArrayList<>();
-      //li2.add(new Application(1,"yo",20,"java",07-08-2002,"yoo"));
-      //if(!li.isEmpty())
-       return new ResponseEntity<>(li,HttpStatus.OK);
-      //return new ResponseEntity<>(HttpStatus.valueOf(400));
+       return new ResponseEntity<>(li,HttpStatus.OK); 
     }
 }
