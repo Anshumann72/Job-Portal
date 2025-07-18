@@ -14,11 +14,10 @@ import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Application {
-
-
+   
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private int applicationId;
     private String status;
     private int yearsOfExperience;
     private String skills;
@@ -43,9 +42,9 @@ public class Application {
     public Application() {
     }
    
-    public Application(int id, String status, int yearsOfExperience, String skills, Date applicationDate,
+    public Application(int applicationId, String status, int yearsOfExperience, String skills, Date applicationDate,
             String locationPreference, Job job, User user) {
-        this.id = id;
+        this.applicationId = applicationId;
         this.status = status;
         this.yearsOfExperience = yearsOfExperience;
         this.skills = skills;
@@ -55,13 +54,13 @@ public class Application {
         this.user = user;
     }
 
-    
-    public int getId() {
-        return id;
+    public int getApplicationId() {
+        return applicationId;
     }
-    public void setId(int id) {
-        this.id = id;
+    public void setApplicationId(int applicationId) {
+        this.applicationId = applicationId;
     }
+   
     public String getStatus() {
         return status;
     }
