@@ -51,8 +51,7 @@ public class JobServiceImpl implements JobService {
 
     @Override
     public Job createJob(Job job) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'createJob'");
+       return jobRepo.save(job);
     }
 
     @Override
