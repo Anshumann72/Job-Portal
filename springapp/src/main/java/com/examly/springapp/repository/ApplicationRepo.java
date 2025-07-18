@@ -6,10 +6,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.examly.springapp.model.Application;
+import com.examly.springapp.model.Job;
 
 @Repository
 public interface ApplicationRepo extends JpaRepository<Application,Integer> {
 
-    List<Application> findBy
+    List<Application> findByJob(Job job);
 
 }

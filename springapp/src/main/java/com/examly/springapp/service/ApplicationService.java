@@ -7,7 +7,7 @@ import com.examly.springapp.model.Application;
 public interface ApplicationService {
 
     List<Application> getAllApplications();
-    Application getApplicationById();
+    Application getApplicationById(int id);
     Application saveApplication(Application application);
     Application updateApplication(int id,Application application);
     void deleteApplication(int id);

@@ -20,9 +20,8 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     @Override
-    public Application getApplicationById() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getApplicationById'");
+    public Application getApplicationById(int id) {
+       return applicationRepo.findById(id).orElse(null);
     }
 
     @Override
@@ -32,8 +31,9 @@ public class ApplicationServiceImpl implements ApplicationService {
 
     @Override
     public Application updateApplication(int id, Application application) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'updateApplication'");
+     Application a=applicationRepo.findById(id).orElse(null);
+      a.setApplicationDate(application.getApplicationDate());
+      a.setLocationPreference(null);
     }
 
     @Override
