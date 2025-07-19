@@ -50,7 +50,27 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency> 
-		<dependency>
+
+		
+	
+<dependency>
+    <groupId>io.jsonwebtoken</groupId>
+    <artifactId>jjwt-api</artifactId>
+    <version>0.10.1</version> <!-- Use the latest stable version -->
+</dependency>
+<dependency>
+    <groupId>io.jsonwebtoken</groupId>
+    <artifactId>jjwt-impl</artifactId>
+    <version>0.10.1</version> <!-- Use the latest stable version -->
+    <scope>runtime</scope>
+</dependency>
+<dependency>
+    <groupId>io.jsonwebtoken</groupId>
+    <artifactId>jjwt-jackson</artifactId>
+    <version>0.10.1</version> <!-- Use the latest stable version -->
+    <scope>runtime</scope>
+</dependency>
+		<!-- <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>
             <version>0.9.1</version>
@@ -64,8 +84,9 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-	</dependencies>
+		</dependency>-->
+		
+	</dependencies> 
 
 	<build>
 		<plugins>
