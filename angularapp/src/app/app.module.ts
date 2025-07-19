@@ -11,6 +11,8 @@ import { ViewApplicationComponent } from './components/view-application/view-app
 import { MyApplicationComponent } from './components/my-application/my-application.component';
 import { ApplicationDetailsComponent } from './components/application-details/application-details.component';
 import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { LoginComponent } from './components/login/login.component';
     MyApplicationComponent,
     ApplicationDetailsComponent,
     LoginComponent,
+    RegisterComponent,
+    NavbarComponent,
     
   ],
   imports: [
