@@ -1,36 +1,62 @@
+
 package com.examly.springapp.controller;
 
+import java.util.Map;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import com.examly.springapp.config.JwtUtils;
+import com.examly.springapp.config.MyUserDetailsService;
 import com.examly.springapp.model.User;
 import com.examly.springapp.service.UserService;
 
 @RestController
+@RequestMapping("/api/user")
+@CrossOrigin("*")
 public class AuthController {
-
-
     @Autowired
-    UserService userService;
+    private UserService userService;
+    @Autowired
+    private AuthenticationManager authenticationManager;
+    @Autowired
+    private JwtUtils jwtUtils;
+    @Autowired
+    private MyUserDetailsService userDetailsService;
 
-    @PostMapping("api/user/register")
-    public ResponseEntity<?> register(User user){
-      User u1=userService.register(user);
-      if(u1!=null) return new ResponseEntity<>(u1,HttpStatus.valueOf(201));
-      return new ResponseEntity<>(HttpStatus.valueOf(400));
+    @PostMapping("/register")
+    public User register(@RequestBody User user) {
+        return userService.registerUser(user);
     }
 
-
-    @PostMapping("api/user/login")
-    public ResponseEntity<?> login(User user){
-      Optional<User> u1=userService.login(user);
-      if(u1.isPresent()) return new ResponseEntity<>(u1,HttpStatus.valueOf(201));
-      return new ResponseEntity<>(HttpStatus.valueOf(400));
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody User user) {
+        try {
+            authenticationManager
+            .authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
+            UserDetails userDetails = userDetailsService.loadUserByUsername(user.getUsername());
+            System.out.println(userDetails.getUsername()+" "+userDetails.getPassword());
+            String token = jwtUtils.generateToken(userDetails);
+            System.out.println(token);
+            Optional<User> userData = userService.loginUser(user);
+            if (userData.isPresent()) {
+                User u = userData.get();
+                return ResponseEntity.ok(Map.of(
+                        "token", token,
+                        "id", u.getUserId(),
+                        "role", u.getRole()));
+            } else {
+                return ResponseEntity.status(401).body("Invalid credentials");
+            }
+        } catch (Exception e) {
+            return ResponseEntity.status(401).body("Invalid credentials");
+        }
     }
-
 }

@@ -11,20 +11,29 @@ import com.examly.springapp.repository.UserRepo;
 public class UserServiceImpl implements UserService {
 
 
-    @Autowired
+@Autowired
 private UserRepo userRepo;
 @Autowired
-private PasswordEncoder passwordEncoder;
+private PasswordEncoder PasswordEncoder;
 
     @Override
-    public User register(User user) {
-        String pwd = passwordEncoder.encode(user.getPassword());
+    public User registerUser(User user) {
+        // if(user.getPassword()==null || user.getPassword().isEmpty()){
+        //     throw new IllegalArgumentException("Username cant be null");
+        // }
+
+        // if(user.getPassword() ==null|| user.getPassword().isEmpty()){
+        //     throw new IllegalArgumentException("Password cant be null");
+        // }
+
+
+        String pwd = PasswordEncoder.encode(user.getPassword());
         user.setPassword(pwd);
         return userRepo.save(user);
     }
 
     @Override
-    public Optional<User> login(User user) {
+    public Optional<User> loginUser(User user) {
         return userRepo.findByUsername(user.getUsername());
     }
 

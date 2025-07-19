@@ -10,8 +10,8 @@ import com.examly.springapp.model.User;
 @Service
 public interface UserService {
 
-    User register(User user);
+    User registerUser(User user);
 
-    Optional<User> login(User user);
+    Optional<User> loginUser(User user);
 
 }
