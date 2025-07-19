@@ -1,6 +1,8 @@
 package com.examly.springapp.service;
 
 
+import java.util.Optional;
+
 import org.springframework.stereotype.Service;
 
 import com.examly.springapp.model.User;
@@ -10,6 +12,6 @@ public interface UserService {
 
     User register(User user);
 
-    User login(User user);
+    Optional<User> login(User user);
 
 }

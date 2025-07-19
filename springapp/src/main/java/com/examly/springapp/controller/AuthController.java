@@ -1,5 +1,7 @@
 package com.examly.springapp.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,8 +28,8 @@ public class AuthController {
 
     @PostMapping("api/user/login")
     public ResponseEntity<?> login(User user){
-      User u1=userService.login(user);
-      if(u1!=null) return new ResponseEntity<>(u1,HttpStatus.valueOf(201));
+      Optional<User> u1=userService.login(user);
+      if(u1.isPresent()) return new ResponseEntity<>(u1,HttpStatus.valueOf(201));
       return new ResponseEntity<>(HttpStatus.valueOf(400));
     }
 
