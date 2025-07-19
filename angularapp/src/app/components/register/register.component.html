@@ -1,1 +1,19 @@
 <h1>welcome to registration</h1>
+<input type="text" name="username" id="username" [(ngModel)]="username">
+
+
+<div *ngIf="!username" class="error-message">
+    Password is required
+    Username is required
+</div>
+<input type="text" name="email" id="email" [(ngModel)]="email">
+    
+    <div *nglf ="!email" class="error-message">
+    Email is required
+    </div>
+    <input type="password" name="password" id="password" [(ngModel)]="password">
+    <div *ngIf="!password" class="error-message">
+    Password is required
+    Username is required
+    </div>
+    
