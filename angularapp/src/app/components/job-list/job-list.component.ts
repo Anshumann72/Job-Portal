@@ -7,13 +7,14 @@ import { Job } from 'src/app/models/job.model';
   styleUrls: ['./job-list.component.css']
 })
 export class JobListComponent implements OnInit {
-
+  errorMessage: string = '';
+  jobs:Job[]=[];
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  jobs:Job[]=[]
+
 
   updateJob(id:number){
 

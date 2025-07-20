@@ -1,1 +1,29 @@
-<p>job-list works!</p>
+
+<div class="job-list-container">
+    <h2>Available Jobs</h2>
+    <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+    <table *ngIf="jobs.length > 0">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Company</th>
+          <th>Location</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let job of jobs">
+          <td>{{ job.title }}</td>
+          <td>{{ job.company }}</td>
+          <td>{{ job.location }}</td>
+          <td>
+            <button *ngIf="userRole === 'Admin'" (click)="navigateToApplicationDetails(job.id)">Update</button>
+            <button *ngIf="userRole === 'Admin'" (click)="deleteJob(job.id)">Delete</button>
+            <button *ngIf="userRole !== 'Admin'" (click)="navigateToApplicationDetails(job.id)">Apply</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p *ngIf="jobs.length === 0">No jobs available.</p>
+  </div>
+  
