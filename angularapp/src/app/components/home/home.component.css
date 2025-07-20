@@ -1,0 +1,18 @@
+
+
+.home-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .home-container h1 {
+    color: #2c3e50;
+    font-size: 28px;
+  }
+  
+  .home-container p {
+    margin-top: 10px;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  
