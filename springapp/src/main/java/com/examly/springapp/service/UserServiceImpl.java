@@ -4,6 +4,7 @@ package com.examly.springapp.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -23,21 +24,22 @@ public class UserServiceImpl implements UserService {
     PasswordEncoder passwordEncoder;
 
     public User registerUser(User user) {
-        if(userRepo.findByUsername(user.getUsername())!=null){
-           throw new UserAlreadyExists("User already exists");
-        }
+        // if(userRepo.findByUsername(user.getUsername())!=null){
+        //     return new ResponseEntity<>("User already exists",500)
+        //    //throw new UserAlreadyExists("User already exists");
+        // }
         user.setPassword(passwordEncoder.encode(user.getPassword()));
        return userRepo.save(user);
     }
 
     public User loginUser(User user) {
         User eUser=userRepo.findByUsername(user.getUsername());
-        if(eUser==null){
-            throw new UserNotExists("User doesnot exist!");
-        }
-        if(!(passwordEncoder.matches(user.getPassword(), eUser.getPassword()))){
-            throw new PasswordIncorrect("Password is incorrect.. please enter valid password");
-        }
+        // if(eUser==null){
+        //     throw new UserNotExists("User doesnot exist!");
+        // }
+        // if(!(passwordEncoder.matches(user.getPassword(), eUser.getPassword()))){
+        //     throw new PasswordIncorrect("Password is incorrect.. please enter valid password");
+        // }
       return eUser;
     }
     
