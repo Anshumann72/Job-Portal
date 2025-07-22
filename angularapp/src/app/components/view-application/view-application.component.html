@@ -1,1 +1,23 @@
-<p>view-application works!</p>
+
+
+<div class="application-history-container">
+    <h2>All Applications</h2>
+  
+    <!-- <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div> -->
+  
+    <div *ngIf="results.length === 0">
+      <p>No job applications found.</p>
+    </div>
+  
+    <div *ngFor="let job of jobs" class="job-card">
+      <p><strong>Job Title:</strong>{{job.title}}</p>
+      <p><strong>Number Of Applications: </strong>{{job.applications.length}}</p>
+      <!-- <p><strong>Status:</strong> {{ app.status }}</p>
+      <p><strong>Years Of Experience:</strong> {{ app.yearsOfExperience }}</p>
+      <p><strong>Skills:</strong> {{ app.skills }}</p>
+      <p><strong>Application Date:</strong>{{ app.applicationDate | date : 'mediumDate' }}</p>
+      <p><strong>Loaction Preference:</strong>{{ app.locationPreference }}</p> -->
+      <button type="button" routerLink="/application-details/{{job.jobId}}" >View Application Details</button>
+    </div>
+  </div>
+ 

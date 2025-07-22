@@ -9,7 +9,7 @@ import { ApplicationService } from 'src/app/services/application.service';
   templateUrl: './job-applications.component.html',
   styleUrls: ['./job-applications.component.css']
 })
-export class JobApplicationComponent implements OnInit {
+export class JobApplicationsComponent implements OnInit {
 
   applicationForm : FormGroup;
 

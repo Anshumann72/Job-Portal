@@ -1,5 +1,8 @@
+
 import { Component, OnInit } from '@angular/core';
-import { Job } from 'src/app/models/job.model';
+import { Router } from '@angular/router';
+import { ApplicationService } from 'src/app/services/application.service';
+import { JobService } from 'src/app/services/job.service';
 
 @Component({
   selector: 'app-view-application',
@@ -8,25 +11,34 @@ import { Job } from 'src/app/models/job.model';
 })
 export class ViewApplicationComponent implements OnInit {
 
-  constructor() { }
+  jobs : any[] = [];
+  applications : any[] = [];
+
+  errorMessage: string = '';
+
+  results : any[] = [];
+
+  constructor(private router: Router, private jobService : JobService, private appService : ApplicationService) { }
 
   ngOnInit(): void {
     this.fetchJobs();
-  }
-
-  jobs:Job[]=[]
-
-  errorMessage:string
-
-  fetchJobs(){
     
   }
 
-  viewJobDetails(jobId:number){
-
-  }
   
 
+  viewJobDetails(jobId: number): void {
+    console.log("view application jobId" + jobId);
+    
+    this.router.navigate(['/application-details', jobId]);
+  }
 
+  fetchJobs() {
+    this.jobService.getAllJobs().subscribe((result)=>{
+      this.jobs = result;
+      
+    });
+  }
 
 }
+

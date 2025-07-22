@@ -13,10 +13,9 @@ import { ApplicationDetailsComponent } from './components/application-details/ap
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { FormsModule } from '@angular/forms';
-import { JobApplicationComponent } from './job-application/job-application.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { JobApplicationsComponent } from './components/job-applications/job-applications.component';
-
+import {HttpClientModule} from "@angular/common/http";
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,14 +29,16 @@ import { JobApplicationsComponent } from './components/job-applications/job-appl
     LoginComponent,
     RegisterComponent,
     NavbarComponent,
-    JobApplicationComponent,
     JobApplicationsComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

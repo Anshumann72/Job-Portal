@@ -1,1 +1,37 @@
-<p>navbar works!</p>
+<nav>
+    <h1><a routerLink="/" style="text-decoration: none; color: inherit;">CareerVault</a></h1>
+    <ul *ngIf="!isLoggedin">
+        <li><a routerLink="/register">Register</a></li>
+        <li><a routerLink="/login">Login</a></li>
+    </ul>
+
+    <ul *ngIf="isLoggedin">
+        <li>Welcome, {{ userName }} ({{ userRole }})</li>
+        <li><a routerLink="/">Home</a></li>
+
+        <ng-container *ngIf="userRole === 'ADMIN'">
+            <li class="dropdown">
+                Job
+                <ul class="dropdown-menu">
+                    <li><a routerLink="/add-job">Add Job</a></li>
+                    <li><a routerLink="/job-list">View Jobs</a></li>
+                </ul>
+            </li>
+            <li><a routerLink="/view-all-application">Application</a></li>
+        </ng-container>
+
+        <ng-container *ngIf="userRole === 'USER'">
+            <li><a routerLink="/job-list">Job List</a></li>
+            <li><a routerLink="/my-application">My Application</a></li>
+        </ng-container>
+
+        <li><button (click)="confirmLogout()">Logout</button></li>
+    </ul>
+
+    <div *ngIf="showLogoutPopup" class="popup">
+        <p>Are you sure you want to logout?</p>
+        <button (click)="logout()">Yes, Logout</button>
+        <button (click)="cancelLogout()">Cancel</button>
+    </div>
+</nav>
+

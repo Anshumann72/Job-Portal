@@ -1,19 +1,40 @@
-<h1>welcome to registration</h1>
-<input type="text" name="username" id="username" [(ngModel)]="username">
 
-
-<div *ngIf="!username" class="error-message">
-    Password is required
-    Username is required
-</div>
-<input type="text" name="email" id="email" [(ngModel)]="email">
-    
-    <div *nglf ="!email" class="error-message">
-    Email is required
-    </div>
-    <input type="password" name="password" id="password" [(ngModel)]="password">
-    <div *ngIf="!password" class="error-message">
-    Password is required
-    Username is required
-    </div>
-    
+<form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" [(ngModel)]="user.username" required #username="ngModel" ngModel/>
+    <div class="error-message" *ngIf="!registerForm.value.username">Username is required
+      Password is required</div><br><br>
+  
+    <label for="email">Email:</label>
+    <input id="email" name="email" type="email" [(ngModel)]="user.email" required #email="ngModel" />
+    <div class="error-message" *ngIf="email.invalid && (email.dirty || email.touched)">Valid Email is required</div><br><br>
+  
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" [(ngModel)]="user.password" required #password="ngModel" placeholder="Password" />
+    <div class="error-message" *ngIf="password.invalid && (password.dirty || password.touched)">
+      Username is required
+      Password is required</div><br><br>
+  
+    <label for="confirmPassword">Confirm Password:</label>
+    <input id="confirmPassword" name="confirmPassword" type="password" [(ngModel)]="user.confirmPassword" required /><br><br>
+  
+    <label for="mobile">Mobile Number:</label>
+    <input id="mobile" name="mobile" type="tel" [(ngModel)]="user.mobile" placeholder="Mobile Number" required /><br><br>
+  
+    <label for="role">Role:</label>
+    <select id="role" name="role" [(ngModel)]="user.role" required>
+      <option value="" disabled>Select Role</option>
+      <option value="USER">USER</option>
+      <option value="ADMIN">ADMIN</option>
+    </select><br><br>
+  
+    <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+  
+    <button type="submit">Register</button><br>
+  </form>
+  
+  <div *ngIf="showModal" tabindex="0" role="dialog" aria-modal="true" class="modal">
+    <p>{{ successMessage }}</p>
+    <button (click)="redirectToLogin()">Go to Login</button>
+  </div>
+  
