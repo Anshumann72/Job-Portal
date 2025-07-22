@@ -30,10 +30,19 @@ public class AuthController {
     @Autowired
     private MyUserDetailsService userDetailsService;
 
-    @PostMapping("/register")
-    public User register(@RequestBody User user) {
-        return userService.registerUser(user);
+    
+@PostMapping("/register")
+public ResponseEntity<?> register(@RequestBody User user) {
+    System.out.println("Received user: " + user); // Log input
+    try {
+        User savedUser = userService.registerUser(user);
+        return ResponseEntity.ok(savedUser);
+    } catch (Exception e) {
+        e.printStackTrace(); // Log the actual error
+        return ResponseEntity.status(500).body("Registration failed: " + e.getMessage());
     }
+}
+
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody User user) {

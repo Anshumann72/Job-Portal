@@ -7,13 +7,13 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  baseUrl: string = 'https://8080-deefdaafcac329136918cdfbcccefone.project.examly.io/api/user';  // replace with your url
+  baseUrl: string = 'https://8080-deefdaafcac329136918cdfbcccefone.project.examly.io/api/user';
 
   private authStatus = new BehaviorSubject<boolean>(this.hasToken());
   private userRoleSubject = new BehaviorSubject<string | null>(localStorage.getItem('userRole'));
   private userIdSubject = new BehaviorSubject<number | null>(+localStorage.getItem('userId')!);
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   private hasToken(): boolean {
     return !!localStorage.getItem('token');
@@ -23,7 +23,8 @@ export class AuthService {
     return this.http.post(`${this.baseUrl}/login`, credentials);
   }
 
-  register(data: any): Observable<any> {
+  // ✅ Accepts only username, password, and role
+  register(data: { username: string; password: string; role: string }): Observable<any> {
     return this.http.post(`${this.baseUrl}/register`, data);
   }
 
@@ -50,15 +51,3 @@ export class AuthService {
     return this.userRoleSubject.value;
   }
 }
-
-
-
-// import { Injectable } from '@angular/core';
-
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class AuthService {
-
-//   constructor() { }
-// }

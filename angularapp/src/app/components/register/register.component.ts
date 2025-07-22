@@ -16,48 +16,46 @@ export class RegisterComponent implements OnInit {
   errorMessage = '';
   showModal = false;
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) {}
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
   register(form: NgForm) {
     if (
       form.invalid ||
-      !this.isPasswordStrong(this.user.password) ||
-      this.user.password !== this.user.confirmPassword
+      !this.user.username ||
+      !this.user.password ||
+      !this.user.confirmPassword ||
+      this.user.password !== this.user.confirmPassword ||
+      !this.user.role
     ) {
       this.errorMessage = this.getErrorMsg();
       return;
     }
 
-    this.authService.register(this.user).subscribe({
+    // ✅ Send only required fields to backend
+    const payload = {
+      username: this.user.username,
+      password: this.user.password,
+      role: this.user.role
+    };
+
+    this.authService.register(payload).subscribe({
       next: () => {
         this.successMessage = "Registration successful!";
         this.showModal = true;
       },
       error: err => {
-        this.errorMessage = err.error.message || "Registration failed.";
+        this.errorMessage = err.error?.message || "Registration failed.";
       }
     });
   }
 
-  isPasswordStrong(password: string): boolean {
-    return /[A-Z]/.test(password) &&
-           /[a-z]/.test(password) &&
-           /\d/.test(password) &&
-           /[^A-Za-z0-9]/.test(password);
-  }
-
   getErrorMsg(): string {
     if (!this.user.username) return "Username is required";
-    if (!this.user.email) return "Email is required";
-    if (!/\S+@\S+\.\S+/.test(this.user.email)) return "Please enter valid email";
     if (!this.user.password) return "Password is required";
-    if (!this.isPasswordStrong(this.user.password))
-      return "Password must include uppercase, lowercase, number, and special character";
     if (!this.user.confirmPassword) return "Confirm password is required";
     if (this.user.password !== this.user.confirmPassword) return "Passwords do not match";
-    if (!this.user.mobile || !/^\d{10}$/.test(this.user.mobile)) return "Mobile number must be 10 digits";
     if (!this.user.role) return "Role is required";
     return '';
   }
