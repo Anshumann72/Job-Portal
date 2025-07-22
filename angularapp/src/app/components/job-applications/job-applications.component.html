@@ -1,0 +1,18 @@
+<div class="application-form">
+    <h2>Apply for Job #{{jobId}}</h2>
+
+    <form (ngSubmit)="submitApplication()" [formGroup]="applicationForm" >
+       <label for="yearsOfExperience">Years Of Experience: </label>
+       <input type="number" name="yearsOfExperience" id="yearsOfExperience" formControlName="yearsOfExperience"  > <br>
+
+       <label for="skills">Skills: </label>
+       <input type="text" name="skills" id="skills" formControlName="skills" > <br>
+
+       <label for="locationPreference">Location Preference: </label>
+       <input type="text" name="locationPreference" id="locationPreference" formControlName="locationPreference"  > <br>
+
+        <button type="submit" >Submit</button>
+
+    </form>
+
+</div>

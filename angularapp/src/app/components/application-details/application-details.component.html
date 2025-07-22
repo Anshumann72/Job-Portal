@@ -1,1 +1,33 @@
-<p>application-details works!</p>
+<p>Application Details is working</p>
+
+
+<div>
+
+    <div>
+        <h3>{{jobDetails.title}}</h3>
+        <p><strong>Company: </strong>{{jobDetails.company}}</p>
+        <p><strong>Location: </strong>{{jobDetails.location}}</p>
+        <p><strong>Description: </strong>{{jobDetails.description}}</p>
+        <h3>Applications</h3>
+        <div *ngFor="let app of jobDetails.applications">
+            <p><strong>Applicant Name: </strong>{{app.user.username}}</p>
+            <p><strong>Years Of Experience: </strong>{{app.yearsOfExperience}}</p>
+            <p><strong>Skills: </strong>{{app.skills}}</p>
+            <p><strong>Application Date: </strong>{{app.applicationDate | date : 'mediumDate'}}</p>
+            <p><strong>Location Preference: </strong>{{app.locationPreference}}</p>
+            <select (change)="updateApplicationStatus(app.applicationId, $event.target.value)" >
+                <option value=""></option>
+                <option value="Pending">Pending</option>
+                <option value="Interview Scheduled">Interview Scheduled</option>
+                <option value="Accepted">Accepted</option>
+                <option value="Rejected">Rejected</option>
+            </select>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+

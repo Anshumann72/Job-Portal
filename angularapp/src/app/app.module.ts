@@ -14,6 +14,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
+import { JobApplicationComponent } from './job-application/job-application.component';
+import { JobApplicationsComponent } from './components/job-applications/job-applications.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     RegisterComponent,
     NavbarComponent,
+    JobApplicationComponent,
+    JobApplicationsComponent,
     
   ],
   imports: [

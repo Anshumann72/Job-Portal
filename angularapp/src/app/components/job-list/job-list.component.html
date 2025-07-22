@@ -1,29 +1,21 @@
 
 <div class="job-list-container">
-    <h2>Available Jobs</h2>
-    <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
-    <table *ngIf="jobs.length > 0">
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Company</th>
-          <th>Location</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let job of jobs">
-          <td>{{ job.title }}</td>
-          <td>{{ job.company }}</td>
-          <td>{{ job.location }}</td>
-          <td>
-            <button *ngIf="userRole === 'Admin'" (click)="navigateToApplicationDetails(job.id)">Update</button>
-            <button *ngIf="userRole === 'Admin'" (click)="deleteJob(job.id)">Delete</button>
-            <button *ngIf="userRole !== 'Admin'" (click)="navigateToApplicationDetails(job.id)">Apply</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <p *ngIf="jobs.length === 0">No jobs available.</p>
+  <h2>Job List</h2>
+
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+  <div *ngIf="jobs.length === 0 && !errorMessage">
+      <p>No jobs available.</p>
   </div>
-  
+
+  <div *ngFor="let job of jobs" class="job-card">
+      <h3>{{ job.title }}</h3>
+      <p><strong>Company:</strong> {{ job.company }}</p>
+      <p><strong>Location:</strong> {{ job.location }}</p>
+
+      <button *ngIf="role === 'ADMIN'" (click)="updateJob(job.jobId)" class="update-btn">Update</button>
+      <button *ngIf="role === 'ADMIN'" (click)="deleteJob(job.jobId)" class="delete-btn">Delete</button>
+      <!-- <button (click)="viewJobApplications(job.jobId)" class="view-btn">View Applications</button> -->
+      <button *ngIf="role === 'USER' " (click)="applyForJob(job.jobId)" >Apply Job</button>
+  </div>
+</div>	
+
