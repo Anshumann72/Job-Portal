@@ -127,7 +127,7 @@ CREATE TABLE `user` (
   `username` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `UK_sb8bbouer5wak8vyiiy4pf2bx` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -136,7 +136,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'$2a$10$2MuuOznmmUd9oQjSc2bZzuvfx1LPHzVhrBVdDy7BiUgAlCTnWKInq','USER','ans72'),(4,'$2a$10$LdRJxXMlhmJzSJ41L3LsC.wh1S0QwOMdBj1COyunaq.xhm4YZ8bzi','USER','ans73'),(5,'$2a$10$0XYPC3nL9OopfohxlwOL..kPXDst.db/NIpZ2BXm3ey3lcWgqymXy','USER','ans20');
+INSERT INTO `user` VALUES (1,'$2a$10$WMMhkZ5.rGfwwWMWXVZzVuHJSruCSIbvr4xtldgQvQIZ58DUFxqee','USER','abc1');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -171,4 +171,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-07-22 20:48:09
+-- Dump completed on 2025-07-22 21:03:07
