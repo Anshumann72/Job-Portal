@@ -44,7 +44,7 @@ public class SecurityConfig {
                             CorsConfiguration cfg = new CorsConfiguration();
 
                             cfg.setAllowedOriginPatterns(Collections.singletonList("*"));
-                            cfg.setAllowedOriginPatterns(Collections.singletonList("https://8081-aeecdbdbcb329136753cdfbcccefone.project.examly.io"));
+                            cfg.setAllowedOriginPatterns(Collections.singletonList("https://8081-deefdaafcac329136918cdfbcccefone.project.examly.io"));
                             cfg.setAllowedMethods(Collections.singletonList("*"));
         
                             cfg.setAllowCredentials(true);

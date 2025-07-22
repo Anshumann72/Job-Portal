@@ -10,25 +10,23 @@ import com.examly.springapp.repository.UserRepo;
 @Service
 public class UserServiceImpl implements UserService {
 
+    @Autowired
+    private UserRepo userRepo;
 
-@Autowired
-private UserRepo userRepo;
-
-@Autowired
-private PasswordEncoder PasswordEncoder;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Override
     public User registerUser(User user) {
-        if(user.getPassword()==null || user.getPassword().isEmpty()){
-            throw new IllegalArgumentException("Username cant be null");
+        if (user.getUsername() == null || user.getUsername().isEmpty()) {
+            throw new IllegalArgumentException("Username can't be null");
         }
 
-        if(user.getPassword() ==null|| user.getPassword().isEmpty()){
-            throw new IllegalArgumentException("Password cant be null");
+        if (user.getPassword() == null || user.getPassword().isEmpty()) {
+            throw new IllegalArgumentException("Password can't be null");
         }
 
-
-        String pwd = PasswordEncoder.encode(user.getPassword());
+        String pwd = passwordEncoder.encode(user.getPassword());
         user.setPassword(pwd);
         return userRepo.save(user);
     }
@@ -37,5 +35,4 @@ private PasswordEncoder PasswordEncoder;
     public Optional<User> loginUser(User user) {
         return userRepo.findByUsername(user.getUsername());
     }
-
 }
