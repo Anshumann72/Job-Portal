@@ -31,7 +31,7 @@ public class MyUserDetailsService implements UserDetailsService{
         //     Collections.singletonList(new SimpleGrantedAuthority("ROLE_"+ user.getRole()))
         // );
 
-        return new UserPrinciple(user)
+        return new UserPrinciple(user);
         
     }
 }
