@@ -18,10 +18,10 @@ export class JobApplicationsComponent implements OnInit {
   successMessage = "";
   errormessage = "";
 
-  constructor(private router:ActivatedRoute, private applicationService:ApplicationService ,private rt:Router, private fb : FormBuilder) { }
+  constructor(private route :ActivatedRoute, private applicationService:ApplicationService ,private router:Router, private fb : FormBuilder) { }
 
   ngOnInit(): void {
-    this.jobId = +this.router.snapshot.paramMap.get('id');
+    this.jobId = +this.route.snapshot.paramMap.get('id');
     this.applicationForm = this.fb.group({
       yearsOfExperience : [null],
       skills : [''],
@@ -33,7 +33,7 @@ export class JobApplicationsComponent implements OnInit {
   
     this.applicationService.saveApplication(this.applicationForm.value).subscribe((result)=>{
       alert('applied successfully');
-      this.rt.navigate(['/my-application']);
+      this.router.navigate(['/my-application']);
     },
     (error)=>{
       console.log(error);
