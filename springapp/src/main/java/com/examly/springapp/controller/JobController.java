@@ -22,13 +22,13 @@ public class JobController {
 
     @Autowired
     JobService jobService;
-     @GetMapping("api/test/job")
-    public ArrayList<Job> getJob(){
-        ArrayList<Job> jobs=new ArrayList<>();
-        jobs.add(new Job(1,"SWE","Spring Boot Development","LTI","Banglore"));
-        return jobs;
+    //  @GetMapping("api/test/job")
+    // public ArrayList<Job> getJob(){
+    //     ArrayList<Job> jobs=new ArrayList<>();
+    //     jobs.add(new Job(1,"SWE","Spring Boot Development","LTI","Banglore"));
+    //     return jobs;
 
-    }
+    // }
 
     @PostMapping("api/jobs")
     public ResponseEntity<?> addJobs(@RequestBody Job job){

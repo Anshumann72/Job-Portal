@@ -1,3 +1,5 @@
+
+
 package com.examly.springapp.controller;
 
 import java.util.Map;
@@ -21,6 +23,7 @@ import com.examly.springapp.service.UserService;
 @RequestMapping("/api/user")
 @CrossOrigin("*")
 public class AuthController {
+    
     @Autowired
     private UserService userService;
     @Autowired
@@ -30,19 +33,10 @@ public class AuthController {
     @Autowired
     private MyUserDetailsService userDetailsService;
 
-    
-@PostMapping("/register")
-public ResponseEntity<?> register(@RequestBody User user) {
-    System.out.println("Received user: " + user); // Log input
-    try {
-        User savedUser = userService.registerUser(user);
-        return ResponseEntity.ok(savedUser);
-    } catch (Exception e) {
-        e.printStackTrace(); // Log the actual error
-        return ResponseEntity.status(500).body("Registration failed: " + e.getMessage());
+    @PostMapping("/register")
+    public User register(@RequestBody User user) {
+        return userService.registerUser(user);
     }
-}
-
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody User user) {
@@ -53,9 +47,9 @@ public ResponseEntity<?> register(@RequestBody User user) {
             System.out.println(userDetails.getUsername()+" "+userDetails.getPassword());
             String token = jwtUtils.generateToken(userDetails);
             System.out.println(token);
-            Optional<User> userData = userService.loginUser(user);
-            if (userData.isPresent()) {
-                User u = userData.get();
+            // Optional<User> userData = userService.loginUser(user);
+            User u = userService.loginUser(user);
+            if (u != null) {
                 return ResponseEntity.ok(Map.of(
                         "token", token,
                         "id", u.getUserId(),
