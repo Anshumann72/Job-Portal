@@ -3,16 +3,22 @@ package com.examly.springapp.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.examly.springapp.model.Application;
+import com.examly.springapp.model.User;
 import com.examly.springapp.repository.ApplicationRepo;
+import com.examly.springapp.repository.UserRepo;
 
 @Service
 public class ApplicationServiceImpl implements ApplicationService {
 
     @Autowired
     ApplicationRepo applicationRepo;
+
+    @Autowired
+    UserRepo userRepo;
 
     @Override
     public List<Application> getAllApplications() {
@@ -48,9 +54,18 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     @Override
-    public List<Application> getApplicationByUserId(int UserId) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getApplicationByUserId'");
+    public List<Application> getApplicationByUserId(long userId) {
+        User user=userRepo.findById(userId).orElse(null);
+    if(user==null){
+       throw new UsernameNotFoundException("Application not found with the current user");
+    }
+    return user.getApplications();
+    }
+
+    @Override
+    public List<Application> getApplicationByUserId() {
+      // TODO Auto-generated method stub
+      throw new UnsupportedOperationException("Unimplemented method 'getApplicationByUserId'");
     }
 
    

@@ -56,20 +56,25 @@ public class JobServiceImpl implements JobService {
 
     @Override
     public Job updateJob(int id, Job job) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'updateJob'");
+       if(jobRepo.existsById(id)){
+        job.setJobId(id);
+        return jobRepo.save(job);
+       }
+       return null;
     }
 
     @Override
     public Optional<Job> getJobByID(int id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getJobByID'");
-    }
+        return jobRepo.findById(id);
+      }
+      
 
     @Override
     public void deleteJob(int id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteJob'");
+      if(jobRepo.existsById(id)){
+          jobRepo.deleteById(id);
+       }
+       
     }
 
 }

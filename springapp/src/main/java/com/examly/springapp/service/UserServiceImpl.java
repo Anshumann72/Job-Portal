@@ -18,13 +18,13 @@ private PasswordEncoder PasswordEncoder;
 
     @Override
     public User registerUser(User user) {
-        // if(user.getPassword()==null || user.getPassword().isEmpty()){
-        //     throw new IllegalArgumentException("Username cant be null");
-        // }
+        if(user.getPassword()==null || user.getPassword().isEmpty()){
+            throw new IllegalArgumentException("Username cant be null");
+        }
 
-        // if(user.getPassword() ==null|| user.getPassword().isEmpty()){
-        //     throw new IllegalArgumentException("Password cant be null");
-        // }
+        if(user.getPassword() ==null|| user.getPassword().isEmpty()){
+            throw new IllegalArgumentException("Password cant be null");
+        }
 
 
         String pwd = PasswordEncoder.encode(user.getPassword());
