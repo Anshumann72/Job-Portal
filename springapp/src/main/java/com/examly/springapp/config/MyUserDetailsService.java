@@ -25,11 +25,13 @@ public class MyUserDetailsService implements UserDetailsService{
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException{
         
         User user = userRepo.findByUsername(username).orElseThrow(()->new UsernameNotFoundException("User not found"));
-        return new org.springframework.security.core.userdetails.User(
-            user.getUsername(),
-            user.getPassword(),
-            Collections.singletonList(new SimpleGrantedAuthority("ROLE_"+ user.getRole()))
-        );
+        // return new org.springframework.security.core.userdetails.User(
+        //     user.getUsername(),
+        //     user.getPassword(),
+        //     Collections.singletonList(new SimpleGrantedAuthority("ROLE_"+ user.getRole()))
+        // );
+
+        return new UserPrinciple(user)
         
     }
 }
