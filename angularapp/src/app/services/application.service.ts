@@ -8,7 +8,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class ApplicationService {
 
-  public baseUrl = 'https://8080-deefdaafcac329136918cdfbcccefone.project.examly.io/api/applications';  // replace with your url
+  public baseUrl = 'https://8080-deefdaafcac329136918cdfbcccefone.project.examly.io/api/applications'; 
 
   constructor(private http: HttpClient) { }
 

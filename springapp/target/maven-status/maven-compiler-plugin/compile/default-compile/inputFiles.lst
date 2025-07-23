@@ -4,16 +4,19 @@
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/exception/AlreadyAppliedForJobException.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/config/JwtAuthenticationFilter.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/service/UserServiceImpl.java
+/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/exception/JobNotFoundException.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/exception/GlobalExceptionHandler.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/config/SecurityConfig.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/model/Application.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/model/User.java
+/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/exception/UserAlreadyApplied.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/controller/JobController.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/exception/UserNotExists.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/exception/PasswordIncorrect.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/config/CorsConfig.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/SpringappApplication.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/controller/ApplicationController.java
+/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/exception/ApplicationNotFoundException.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/config/UserPrinciple.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/model/Job.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/service/JobServiceImpl.java
@@ -24,6 +27,7 @@
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/repository/ApplicationRepo.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/repository/JobRepo.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/controller/TestController.java
+/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/exception/InvalidUserException.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/service/UserService.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/service/ApplicationServiceImpl.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/repository/UserRepo.java

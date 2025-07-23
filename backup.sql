@@ -129,7 +129,7 @@ CREATE TABLE `user` (
   `username` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `UK_sb8bbouer5wak8vyiiy4pf2bx` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -138,7 +138,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'$2a$10$WMMhkZ5.rGfwwWMWXVZzVuHJSruCSIbvr4xtldgQvQIZ58DUFxqee','USER','abc1'),(2,'$2a$10$X1it.t0H5YhNJpe2gQJSUu9Wes1HNvsBA9fYb/UIN/NZR1jLu5ZL6','USER','abc2'),(3,'$2a$10$9iH3GBd7ic0JneZhGXpZweE05ObVwpnZlp/aDrLtS2fcoo7OOfKDm','USER','Bommi19'),(4,'$2a$10$k8.ncjUBGqXgkpw3ODxKsObTO6H9/3Rl.V2O5PiAEHaNT0RbBof02','ADMIN','anshu72');
+INSERT INTO `user` VALUES (1,'$2a$10$WMMhkZ5.rGfwwWMWXVZzVuHJSruCSIbvr4xtldgQvQIZ58DUFxqee','USER','abc1'),(2,'$2a$10$X1it.t0H5YhNJpe2gQJSUu9Wes1HNvsBA9fYb/UIN/NZR1jLu5ZL6','USER','abc2'),(3,'$2a$10$9iH3GBd7ic0JneZhGXpZweE05ObVwpnZlp/aDrLtS2fcoo7OOfKDm','USER','Bommi19'),(4,'$2a$10$k8.ncjUBGqXgkpw3ODxKsObTO6H9/3Rl.V2O5PiAEHaNT0RbBof02','ADMIN','anshu72'),(5,'$2a$10$8Do6zFD6yMYWzMmEJOyqreAlwS47R23XiasZOThumAabn5DW7brzm','ADMIN','User101');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -173,4 +173,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-07-23  9:17:21
+-- Dump completed on 2025-07-23  9:32:54
