@@ -26,25 +26,25 @@ public ResponseEntity<?> method4(PasswordIncorrect e){
     return ResponseEntity.status(409).body(e.getMessage());
 }
 
-// @ExceptionHandler(JobNotFoundException.class)
-// public ResponseEntity<?> method5(JobNotFoundException e){
-//     return ResponseEntity.status(409).body(e.getMessage());
-// }
+@ExceptionHandler(JobNotFoundException.class)
+public ResponseEntity<?> method5(JobNotFoundException e){
+    return ResponseEntity.status(409).body(e.getMessage());
+}
 
-// @ExceptionHandler(ApplicationNotFoundException.class)
-// public ResponseEntity<?> method6(ApplicationNotFoundException e){
-//     return ResponseEntity.status(409).body(e.getMessage());
-// }
+@ExceptionHandler(ApplicationNotFoundException.class)
+public ResponseEntity<?> method6(ApplicationNotFoundException e){
+    return ResponseEntity.status(409).body(e.getMessage());
+}
 
-// @ExceptionHandler(InvalidUserException.class)
-// public ResponseEntity<?> method7(InvalidUserException e){
-//     return ResponseEntity.status(409).body(e.getMessage());
-// }
+@ExceptionHandler(InvalidUserException.class)
+public ResponseEntity<?> method7(InvalidUserException e){
+    return ResponseEntity.status(409).body(e.getMessage());
+}
 
-// @ExceptionHandler(UserAlreadyApplied.class)
-// public ResponseEntity<?> method8(UserAlreadyApplied e){
-//     return ResponseEntity.status(409).body(e.getMessage());
-// }
+@ExceptionHandler(UserAlreadyApplied.class)
+public ResponseEntity<?> method8(UserAlreadyApplied e){
+    return ResponseEntity.status(409).body(e.getMessage());
+}
 
 // @ExceptionHandler(InvalidDateException.class)
 // public ResponseEntity<?> method9(InvalidDateException e){

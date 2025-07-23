@@ -16,7 +16,7 @@ import com.examly.springapp.model.Job;
 import com.examly.springapp.model.User;
 import com.examly.springapp.repository.ApplicationRepo;
 import com.examly.springapp.repository.JobRepo;
-import com.examly.springapp.repository.JobRepository;
+import com.examly.springapp.repository.JobRepo;
 import com.examly.springapp.repository.UserRepo;
 
 @Service
