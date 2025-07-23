@@ -54,7 +54,7 @@ CREATE TABLE `application` (
 
 LOCK TABLES `application` WRITE;
 /*!40000 ALTER TABLE `application` DISABLE KEYS */;
-INSERT INTO `application` VALUES (1,NULL,'chennai','spring',NULL,1,NULL,NULL),(2,NULL,'hyd','spring boot',NULL,2,NULL,NULL),(3,NULL,'hyd','spring boot',NULL,3,NULL,NULL),(4,NULL,'hyd','spring boot',NULL,4,NULL,NULL),(5,NULL,'banglore','python',NULL,54,NULL,NULL),(6,NULL,'chennai','backend',NULL,12,NULL,NULL),(7,NULL,'banglore','backend',NULL,10,NULL,NULL),(8,NULL,'Hyd','Java',NULL,12,NULL,NULL),(9,'2025-07-23','mum','python','Applied succesfully',2,NULL,3),(10,'2025-07-23','Hyd','spring boot','Applied succesfully',2,2,3);
+INSERT INTO `application` VALUES (1,NULL,'chennai','spring',NULL,1,NULL,NULL),(2,NULL,'hyd','spring boot',NULL,2,NULL,NULL),(3,NULL,'hyd','spring boot',NULL,3,NULL,NULL),(4,NULL,'hyd','spring boot',NULL,4,NULL,NULL),(5,NULL,'banglore','python',NULL,54,NULL,NULL),(6,NULL,'chennai','backend',NULL,12,NULL,NULL),(7,NULL,'banglore','backend',NULL,10,NULL,NULL),(8,NULL,'Hyd','Java',NULL,12,NULL,NULL),(9,'2025-07-23','mum','python','Applied succesfully',2,NULL,3),(10,'2025-07-23','Hyd','spring boot','Interview Scheduled',2,2,3);
 /*!40000 ALTER TABLE `application` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -173,4 +173,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-07-23 13:10:11
+-- Dump completed on 2025-07-23 13:25:14
