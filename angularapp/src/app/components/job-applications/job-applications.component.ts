@@ -31,7 +31,7 @@ export class JobApplicationsComponent implements OnInit {
 
   submitApplication(){
   
-    this.applicationService.saveApplication(this.applicationForm.value).subscribe((result)=>{
+    this.applicationService.saveApplication(this.applicationForm.value,this.jobId).subscribe((result)=>{
       alert('applied successfully');
       this.router.navigate(['/my-application']);
     },

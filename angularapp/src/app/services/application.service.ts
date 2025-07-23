@@ -1,3 +1,5 @@
+
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
@@ -8,7 +10,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class ApplicationService {
 
-  public baseUrl = 'https://8080-deefdaafcac329136918cdfbcccefone.project.examly.io/api/applications'; 
+  public baseUrl = 'https://8080-deefdaafcac329136918cdfbcccefone.project.examly.io/api/applications';  //'http://localhost:8080/api/applications';
 
   constructor(private http: HttpClient) { }
 
@@ -20,8 +22,9 @@ export class ApplicationService {
     return this.http.get<any>(`${this.baseUrl}/${id}`).pipe(catchError(this.handleError));
   }
 
-  saveApplication(application: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}`, application).pipe(catchError(this.handleError));
+  saveApplication(application:any, jobId: number): Observable<any> {
+    const userId = localStorage.getItem('userId');
+    return this.http.post(`${this.baseUrl}/${jobId}/${userId}`, application).pipe(catchError(this.handleError));
   }
 
   getApplicationsByUserId(userId: number): Observable<any[]> {
@@ -29,7 +32,7 @@ export class ApplicationService {
   }
 
   updateApplication(id: number, application: any): Observable<any> {
-    return this.http.put(`${this.baseUrl}/${id}`, application).pipe(catchError(this.handleError));
+    return this.http.put(`${this.baseUrl}/status/${id}`, application).pipe(catchError(this.handleError));
   }
 
   deleteApplication(id: number): Observable<void> {
@@ -41,13 +44,3 @@ export class ApplicationService {
   }
 }
 
-
-// import { Injectable } from '@angular/core';
-
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class ApplicationService {
-
-//   constructor() { }
-// }
