@@ -16,3 +16,5 @@ public interface ApplicationService {
     void deleteApplication(int id);
     public List<Application> getApplicationsByUserId(long userId);
 }
+
+
