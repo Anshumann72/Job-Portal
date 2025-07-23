@@ -1,0 +1,61 @@
+
+/* Container styling */
+.application-details-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 25px;
+    background-color: #fefefe;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Headings */
+  .application-details-container h3 {
+    color: #0078d4;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  /* Paragraphs */
+  .application-details-container p {
+    margin: 8px 0;
+    color: #444;
+  }
+  
+  /* Strong text */
+  .application-details-container strong {
+    color: #333;
+  }
+  
+  /* Individual application card */
+  .application-card {
+    background-color: #f4f8fc;
+    border-left: 4px solid #0078d4;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Dropdown styling */
+  .application-card select {
+    margin-top: 10px;
+    padding: 8px;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .application-details-container {
+      padding: 15px;
+    }
+  
+    .application-card {
+      padding: 12px;
+    }
+  }
+  

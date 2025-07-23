@@ -1,0 +1,69 @@
+.application-history-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 25px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  .application-history-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  .job-card {
+    background-color: #ffffff;
+    border-left: 5px solid #0078d4;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+  }
+  
+  .job-card:hover {
+    transform: scale(1.01);
+  }
+  
+  .job-card p {
+    margin: 8px 0;
+    color: #444;
+  }
+  
+  .job-card strong {
+    color: #0078d4;
+  }
+  
+  .job-card button {
+    margin-top: 10px;
+    padding: 10px 16px;
+    background-color: #0078d4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .job-card button:hover {
+    background-color: #005fa3;
+  }
+  
+  @media (max-width: 600px) {
+    .application-history-container {
+      padding: 15px;
+    }
+  
+    .job-card {
+      padding: 15px;
+    }
+  
+    .job-card button {
+      width: 100%;
+    }
+  }
+  

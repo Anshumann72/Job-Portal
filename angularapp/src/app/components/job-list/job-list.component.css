@@ -1,22 +1,107 @@
-
 .job-list-container {
-    padding: 20px;
-    font-family: Arial, sans-serif;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 25px;
+  background-color: #fefefe;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.job-list-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.error {
+  color: #d8000c;
+  background-color: #ffbaba;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.job-card {
+  background-color: #f4f8fc;
+  border-left: 5px solid #0078d4;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.job-card:hover {
+  transform: scale(1.01);
+}
+
+.job-card h3 {
+  margin-top: 0;
+  color: #0078d4;
+}
+
+.job-card p {
+  margin: 8px 0;
+  color: #444;
+}
+
+.job-card strong {
+  color: #333;
+}
+
+/* Button styles */
+.job-card button {
+  margin-right: 10px;
+  margin-top: 10px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.update-btn {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.update-btn:hover {
+  background-color: #e0a800;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+.job-card button:not(.update-btn):not(.delete-btn) {
+  background-color: #0078d4;
+  color: white;
+}
+
+.job-card button:not(.update-btn):not(.delete-btn):hover {
+  background-color: #005fa3;
+}
+
+@media (max-width: 600px) {
+  .job-list-container {
+    padding: 15px;
   }
-  
-  table {
+
+  .job-card {
+    padding: 15px;
+  }
+
+  .job-card button {
+    display: block;
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
+    margin-bottom: 10px;
   }
-  
-  th, td {
-    border: 1px solid #ccc;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  .error {
-    color: red;
-  }
-  
+}
