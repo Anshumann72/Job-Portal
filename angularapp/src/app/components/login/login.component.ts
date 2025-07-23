@@ -1,4 +1,5 @@
 
+
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -11,29 +12,32 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent implements OnInit {
   user: any = {
-    username: '',
+    email: '',
     password: ''
   };
   errorMessage = '';
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   onLogin(form: NgForm): void {
     if (form.invalid) return;
-
+  
     const loginPayload = {
       username: this.user.username,
-      password: this.user.password
+      password: this.user.password,
+      role: this.user.role   // Make sure this field exists and is bound in your form
     };
-
+  
     this.authService.login(loginPayload).subscribe({
       next: (res) => {
-        console.log('Login successful:', res);
-               localStorage.setItem('userRole', res.role);
+
+        console.log(res);
+        localStorage.setItem('token', res.token);
+        localStorage.setItem('userRole', res.role);
         localStorage.setItem('userId', res.id);
-        localStorage.setItem('userName', this.user.username); // Using input username
+        localStorage.setItem('userName', res.username); // If needed
         this.router.navigate(['/home']);
       },
       error: () => {
@@ -41,4 +45,7 @@ export class LoginComponent implements OnInit {
       }
     });
   }
+  
+  
 }
+
