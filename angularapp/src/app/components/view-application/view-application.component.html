@@ -1,23 +1,103 @@
 
-
 <div class="application-history-container">
-    <h2>All Applications</h2>
-  
-    <!-- <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div> -->
-  
-    <div *ngIf="results.length === 0">
-      <p>No job applications found.</p>
-    </div>
-  
-    <div *ngFor="let job of jobs" class="job-card">
-      <p><strong>Job Title:</strong>{{job.title}}</p>
-      <p><strong>Number Of Applications: </strong>{{job.applications.length}}</p>
-      <!-- <p><strong>Status:</strong> {{ app.status }}</p>
-      <p><strong>Years Of Experience:</strong> {{ app.yearsOfExperience }}</p>
-      <p><strong>Skills:</strong> {{ app.skills }}</p>
-      <p><strong>Application Date:</strong>{{ app.applicationDate | date : 'mediumDate' }}</p>
-      <p><strong>Loaction Preference:</strong>{{ app.locationPreference }}</p> -->
-      <button type="button" routerLink="/application-details/{{job.jobId}}" >View Application Details</button>
-    </div>
+  <h2>All Applications</h2>
+
+  <!-- <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div> -->
+
+  <div *ngIf="results.length === 0">
+    <p>No job applications found.</p>
   </div>
- 
+
+  <div *ngFor="let job of jobs" class="job-card">
+    <p><strong>Job Title:</strong>{{job.title}}</p>
+    <p><strong>Number Of Applications: </strong>{{job.applications.length}}</p>
+    <!-- <p><strong>Status:</strong> {{ app.status }}</p>
+    <p><strong>Years Of Experience:</strong> {{ app.yearsOfExperience }}</p>
+    <p><strong>Skills:</strong> {{ app.skills }}</p>
+    <p><strong>Application Date:</strong>{{ app.applicationDate | date : 'mediumDate' }}</p>
+    <p><strong>Loaction Preference:</strong>{{ app.locationPreference }}</p> -->
+    <button type="button" routerLink="/application-details/{{job.jobId}}" >View Application Details</button>
+  </div>
+</div>
+<!-- 
+<div class="application-list">
+    <h2>Job Applications</h2>
+  
+    
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+  
+    
+    <table *ngIf="jobs.length > 0; else noApplications">
+      <thead>
+        <tr>
+          <th>Job Title</th>
+          <th>Company</th>
+          <th>Location</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let job of jobs">
+          <td>{{ job.title }}</td>
+          <td>{{ job.company }}</td>
+          <td>{{ job.location }}</td>
+          <td>
+            <button (click)="viewJobDetails(job.id)">View Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <ng-template #noApplications>
+      <p>No job applications found.</p>
+    </ng-template>
+  </div>
+   -->
+
+
+<!-- 
+<div class="job-list">
+    <h2>All Job Postings</h2>
+    <div *ngIf="errorMessage">{{ errorMessage }}</div>
+    <table *ngIf="jobs.length; else noJobs">
+        <thead>
+            <tr>
+                <th>Job Title</th>
+                <th>Company</th>
+                <th>Location</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let job of jobs">
+                <td>{{ job.title }}</td>
+                <td>{{ job.company }}</td>
+                <td>{{ job.location }}</td>
+                <td><button (click)="viewJobDetails(job.id)">View</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <ng-template #noJobs>
+        <p>No job postings available.</p>
+    </ng-template>
+</div>
+ -->
+
+
+
+<!-- <div class="view-application-component" >  
+    <div *ngIf="errorMessage" class="error" >{{errorMessage}}</div>
+
+    <div class="jobs-with-applications" >
+        <h1>Jobs with Applications</h1>
+        <div *ngIf="jobs.length === 0" >No jobs available.</div>
+
+        <div *ngFor="let job of jobs" class="job" >
+            <a (click)="viewJobDetails(job.jobId)" style="cursor:pointer;" >{{job.title}}</a>
+            <p>{{job.company}} - {{job.location}}</p>
+        </div>
+    </div>
+
+</div> -->

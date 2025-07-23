@@ -45,7 +45,7 @@ CREATE TABLE `application` (
   KEY `FK3ga1nw5lk8in7w6tn5d00s9vm` (`userid`),
   CONSTRAINT `FK3ga1nw5lk8in7w6tn5d00s9vm` FOREIGN KEY (`userid`) REFERENCES `user` (`user_id`),
   CONSTRAINT `FK61f0ef4d99u1newn8cwx30j98` FOREIGN KEY (`jobid`) REFERENCES `job` (`job_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -54,7 +54,7 @@ CREATE TABLE `application` (
 
 LOCK TABLES `application` WRITE;
 /*!40000 ALTER TABLE `application` DISABLE KEYS */;
-INSERT INTO `application` VALUES (1,NULL,'chennai','spring',NULL,1,NULL,NULL),(2,NULL,'hyd','spring boot',NULL,2,NULL,NULL),(3,NULL,'hyd','spring boot',NULL,3,NULL,NULL);
+INSERT INTO `application` VALUES (1,NULL,'chennai','spring',NULL,1,NULL,NULL),(2,NULL,'hyd','spring boot',NULL,2,NULL,NULL),(3,NULL,'hyd','spring boot',NULL,3,NULL,NULL),(4,NULL,'hyd','spring boot',NULL,4,NULL,NULL),(5,NULL,'banglore','python',NULL,54,NULL,NULL),(6,NULL,'chennai','backend',NULL,12,NULL,NULL),(7,NULL,'banglore','backend',NULL,10,NULL,NULL);
 /*!40000 ALTER TABLE `application` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -173,4 +173,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-07-23 10:19:24
+-- Dump completed on 2025-07-23 10:34:24
