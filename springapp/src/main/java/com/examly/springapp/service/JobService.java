@@ -1,33 +1,24 @@
+
 package com.examly.springapp.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.examly.springapp.model.Job;
-import com.examly.springapp.repository.JobRepo;
-import java.util.*;
 
 @Service
 public interface JobService {
+    public Job createJob(Job job);
 
-  Job getJobsById(int jobId);
+    public Job updateJob(Job job, int jobId);
 
-  boolean deleteJobs(int jobId);
+    public List<Job> getAllJobs();
 
-  List<Job> getAllJobs();
+    public Job getJobById(int jobId);
 
-  Job updateJobs(int jobId, Job job);
+    public boolean deleteJob(int jobId);
 
-  Job addJobs(Job job);
-
-  Job createJob(Job job);
-
-  Job updateJob(int id,Job job);
-  Optional<Job> getJobByID(int id);
-  //List<Job> getAllJobs();
-  void deleteJob(int id);
-
-
-   
-
+    public List<Job> getJobByUserId(long userId);
 }
+

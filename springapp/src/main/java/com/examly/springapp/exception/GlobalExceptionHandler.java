@@ -46,10 +46,10 @@ public ResponseEntity<?> method8(UserAlreadyApplied e){
     return ResponseEntity.status(409).body(e.getMessage());
 }
 
-// @ExceptionHandler(InvalidDateException.class)
-// public ResponseEntity<?> method9(InvalidDateException e){
-//     return ResponseEntity.status(409).body(e.getMessage());
-// }
+@ExceptionHandler(InvalidDateException.class)
+public ResponseEntity<?> method9(InvalidDateException e){
+    return ResponseEntity.status(409).body(e.getMessage());
+}
 
 // @ExceptionHandler(PhoneNumberInvalid.class)
 // public ResponseEntity<?> method10(PhoneNumberInvalid e){

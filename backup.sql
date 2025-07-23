@@ -102,7 +102,7 @@ CREATE TABLE `job` (
   PRIMARY KEY (`job_id`),
   KEY `FKtdctvjuwshux1vuw4xk1u92yb` (`user_user_id`),
   CONSTRAINT `FKtdctvjuwshux1vuw4xk1u92yb` FOREIGN KEY (`user_user_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -111,7 +111,7 @@ CREATE TABLE `job` (
 
 LOCK TABLES `job` WRITE;
 /*!40000 ALTER TABLE `job` DISABLE KEYS */;
-INSERT INTO `job` VALUES (2,'LtiMindtree',NULL,'Spring Boot',NULL,NULL,'chennai',NULL,0,'Java Dev',NULL);
+INSERT INTO `job` VALUES (2,'LtiMindtree',NULL,'Spring Boot',NULL,NULL,'chennai',NULL,0,'Java Dev',NULL),(3,'nokia',NULL,'machine learning',NULL,NULL,'nokia',NULL,0,'python dev',NULL);
 /*!40000 ALTER TABLE `job` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -173,4 +173,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-07-23  9:32:54
+-- Dump completed on 2025-07-23 10:04:25

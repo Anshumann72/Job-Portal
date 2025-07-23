@@ -15,8 +15,7 @@ import com.examly.springapp.model.Application;
 import com.examly.springapp.model.Job;
 import com.examly.springapp.model.User;
 import com.examly.springapp.repository.ApplicationRepo;
-import com.examly.springapp.repository.JobRepo;
-import com.examly.springapp.repository.JobRepo;
+import com.examly.springapp.repository.JobRepository;
 import com.examly.springapp.repository.UserRepo;
 
 @Service
@@ -24,7 +23,7 @@ public class ApplicationServiceImpl implements ApplicationService{
 @Autowired
 ApplicationRepo applicationRepo;
 @Autowired
-JobRepo jobRepository;
+JobRepository jobRepository;
 @Autowired
 UserRepo userRepo;
 
